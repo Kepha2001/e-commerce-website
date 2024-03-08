@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./amazon.css" />
+  </head>
+  <body>
+    <!-- Login Page -->
+    <div class="login-interface panel" id="login-page">
+      <div class="login-username-div">
+        <h3>Username:</h3>
+        <input type="text" class="login-input" id="username-login-input" />
+      </div>
+      <div class="login-password-div">
+        <h3>Password:</h3>
+        <input type="password" class="login-input" id="password-login-input" />
+      </div>
+      <div class="login-button-div">
+        <button id="login-but" class="login-buttons" onclick="amazon.login()">
+          Login
+        </button>
+      </div>
+      <div class="sign-in-button-div">
+        <p class="sign-in-msg">Don't have an account. Sign in!</p>
+        <button
+          id="sign-in-but"
+          class="login-buttons"
+          onclick="amazon.signInPage()"
+        >
+          Sign in
+        </button>
+      </div>
+    </div>
+    <!-- SignIn Page -->
+    <div class="login-interface panel" id="signin-page">
+      <div>
+        <h2>Create Account</h2>
+      </div>
+      <div class="login-username-div">
+        <h3>Username:</h3>
+        <input type="text" class="login-input" id="username-signin-input" />
+      </div>
+      <div class="login-password-div">
+        <h3>Password:</h3>
+        <input type="password" class="login-input" id="password-signin-input" />
+      </div>
+      <div>
+        <p>Register as:</p>
+        <select class="signin-dropdown">
+          <option value="" disabled selected hidden>Select</option>
+          <option id="buyer-but" value="true">Buyer</option>
+          <option id="seller-but" value="false">Seller</option>
+        </select>
+      </div>
+      <div class="signin-submit-buttons" id="seller-but">
+        <div class="signin-enter-but-div">
+          <button
+            class="signin-buttons"
+            id="signin-enter-but"
+            onclick="amazon.signInUser()"
+          >
+            Enter
+          </button>
+        </div>
+        <div class="signin-back-but-div">
+          <button
+            class="signin-buttons"
+            id="signin-back-but"
+            onclick="amazon.backToLogin()"
+          >
+            Back
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Products Page -->
+    <div class="panel" id="products-page">
+      <div class="amazon-header" id="products-page">
+        <div>
+          <h1 id="welcome-msg">Welcome User</h1>
+        </div>
+        <div>
+        </div>
+        <div>
+          <button id="logout-but" onclick="amazon.selectPanel(loginPage)">Logout</button>
+          <button id="cart-but" onclick="amazon.userCart()">Cart</button>
+        </div>
+      </div>
+      <div class="main-product-div">
+        <div class="product-container"></div>
+      </div>
+    </div>
+    <!-- Checkout Page -->
+    <div class="cart-main-div panel" id="checkout-page">
+      <div class="carts-div">
+        <div>
+          <div class="checkout-heading">
+            <h2>Your cart items</h2>
+            <button id="cart-back-but" onclick="amazon.checkoutBack()">
+              Back
+            </button>
+          </div>
+          <div class="order-container"></div>
+        </div>
+        <div class="summary"></div>
+      </div>
+    </div>
+    <!--Seller Page-->
+    <div class="panel" id="seller-page">
+      <div class="seller-webpage">
+        <div class="seller-add-item-section">
+          <h3>Add Product</h3>
+          <div>
+            <p>Enter the product details:</p>
+            <p>Name of the product:</p>
+            <input type="text" id="seller-product-item-name" />
+            <p>Image Source:</p>
+            <input type="text" id="seller-product-image-source" />
+            <p>Quantity:</p>
+            <input type="number" id="seller-product-quantity" />
+            <p>Price:</p>
+            <input type="number" id="seller-product-price" /><br />
+            <button class="add-item">Add item</button><br />
+            <button class="add-item" onclick="amazon.backToLogin()">
+              Back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./amazon.js"></script>
+  </body>
+</html>
